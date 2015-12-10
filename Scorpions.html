@@ -1,0 +1,128 @@
+<html>
+ <head>
+ <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+</head>
+<body>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!--   customize function -->
+<script type="text/javascript">
+	
+	google.load('visualization', '1', {'packages': ['map']});
+	
+	google.setOnLoadCallback(drawMap);
+   
+    function drawMap() {
+      	
+		var location = new Array();
+		var crime = new Array();
+		var poverty = new Array();
+		
+        var json = null;
+
+		var json = (function() {
+
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': "queryResults.json",
+            'dataType': "json",
+            'success': function (data) {
+            	for(i=0; i<data.results.bindings.length; i++) {
+                location[i] = data.results.bindings[i].location.value;
+            	crime[i]= data.results.bindings[i].crimevalue.value;
+                poverty[i] = data.results.bindings[i].povertyvalue.value;
+                
+            	
+            	}
+            }
+        });
+        
+    })();
+		
+		handleQueryResponse(location, crime, poverty);
+      }
+	  
+	function  handleQueryResponse(location, crime, poverty){
+		
+		var ratio = new Array();
+		for(var j = 0; j<location.length; j++){
+		if(poverty[j]==0){
+			ratio[j] = 0;
+		}
+		else{
+			ratio[j] = crime[j]/poverty[j];
+		}
+		}
+	
+		var newdata = new google.visualization.DataTable();
+      	newdata.addColumn('string', 'City', 'City');
+    	newdata.addColumn('string', 'Crime', 'crime');
+      	newdata.addColumn('string', 'Poverty', 'Poverty');
+		
+		
+		
+		var bar_data = new google.visualization.DataTable();
+      	bar_data.addColumn('string', 'City', 'City');
+    	bar_data.addColumn('number', 'Ratio', 'Ratio');
+		
+		
+		var temp = "";
+		var rows = location.length;
+        
+      	for (var i = 0; i < rows; i++ )
+      	{	
+          temp = "Location: " + location[i] +"\nCrime: "+ crime[i] +"\nPoverty: " + poverty[i];
+      	  newdata.addRow([location[i], temp,poverty[i]]);
+		  bar_data.addRow([location[i], ratio[i]]);
+      	}
+		
+       
+		var options_bar = {
+          title: 'Ratio of Crime to Poverty for Counties in the state of California',
+          width: 1600,
+          legend: { position: 'none' },
+          chart: { title: 'Ratio of Crime to Poverty for Counties in the state of California',
+                   subtitle: 'Ratio being 0 indicates that Poverty is zero' },
+          bars: 'vertical', // Required for Material Bar Charts.
+          axes: {
+            y: {
+              0: { side: 'below', label: 'Ratio'} // Top y-axis.
+            },
+			x: {
+              0: { side: 'top', label: 'County'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var bar_chart = new google.charts.Bar(document.getElementById('bar_div'));
+        bar_chart.draw(bar_data, options_bar);
+      
+		
+		
+	   
+	   
+	   
+		var options = { 
+				
+				showTip: true 
+				
+    			};
+      var chart = new google.visualization.Map(document.getElementById('chart_div'));
+    
+      chart.draw(newdata, options);   
+	  
+ 
+	};
+		
+</script>
+<h2> Correlation between Poverty and Crime rate for the State of California</h2>
+<div id = "canvas"> <div id='chart_div'  style="width: 900px; height: 500px;">Loading Map ...</div></div>
+<br/><br/>
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
+	<div id="bar_div" style="width: 900px; height: 500px;"/>	     
+
+</body>
+</html>

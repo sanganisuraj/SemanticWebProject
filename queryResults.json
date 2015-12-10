@@ -1,0 +1,109 @@
+{
+  "head": {
+    "vars": [ "povertyvalue" , "location" , "crimevalue" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "povertyvalue": { "type": "literal" , "value": "467799" } ,
+        "location": { "type": "literal" , "value": "California" } ,
+        "crimevalue": { "type": "literal" , "value": "163957" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "7430" } ,
+        "location": { "type": "literal" , "value": "Alameda" } ,
+        "crimevalue": { "type": "literal" , "value": "10468" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Alpine" } ,
+        "crimevalue": { "type": "literal" , "value": "10" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Amador" } ,
+        "crimevalue": { "type": "literal" , "value": "110" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "6700" } ,
+        "location": { "type": "literal" , "value": "Butte" } ,
+        "crimevalue": { "type": "literal" , "value": "762" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Calaveras" } ,
+        "crimevalue": { "type": "literal" , "value": "93" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Colusa" } ,
+        "crimevalue": { "type": "literal" , "value": "48" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Contra Costa" } ,
+        "crimevalue": { "type": "literal" , "value": "4326" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Del Norte" } ,
+        "crimevalue": { "type": "literal" , "value": "111" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "El Dorado" } ,
+        "crimevalue": { "type": "literal" , "value": "485" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "57167" } ,
+        "location": { "type": "literal" , "value": "Fresno" } ,
+        "crimevalue": { "type": "literal" , "value": "4976" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Glenn" } ,
+        "crimevalue": { "type": "literal" , "value": "73" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "2342" } ,
+        "location": { "type": "literal" , "value": "Humboldt" } ,
+        "crimevalue": { "type": "literal" , "value": "529" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "1702" } ,
+        "location": { "type": "literal" , "value": "Imperial" } ,
+        "crimevalue": { "type": "literal" , "value": "618" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Inyo" } ,
+        "crimevalue": { "type": "literal" , "value": "69" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "29497" } ,
+        "location": { "type": "literal" , "value": "Kern" } ,
+        "crimevalue": { "type": "literal" , "value": "4879" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "2469" } ,
+        "location": { "type": "literal" , "value": "Kings" } ,
+        "crimevalue": { "type": "literal" , "value": "533" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Lake" } ,
+        "crimevalue": { "type": "literal" , "value": "292" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "0" } ,
+        "location": { "type": "literal" , "value": "Lassen" } ,
+        "crimevalue": { "type": "literal" , "value": "118" }
+      } ,
+      {
+        "povertyvalue": { "type": "literal" , "value": "236325" } ,
+        "location": { "type": "literal" , "value": "Los Angeles" } ,
+        "crimevalue": { "type": "literal" , "value": "50223" }
+      }
+    ]
+  }
+}
